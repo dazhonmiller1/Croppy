@@ -1,0 +1,219 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 265 89% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 265 89% 50%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 265 89% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 265 89% 60%;
+  }
+}
+
+/* Global font settings */
+html {
+  font-family: var(--font-inter);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-inter);
+    font-weight: 300;
+    overflow: hidden;
+  }
+
+  /* Typography reset to ensure consistency */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  span,
+  div,
+  button,
+  input,
+  textarea,
+  select,
+  label,
+  a {
+    font-family: var(--font-inter) !important;
+    font-weight: 300;
+  }
+
+  h1 {
+    @apply text-3xl tracking-tight;
+    font-weight: 300 !important;
+  }
+
+  h2 {
+    @apply text-2xl tracking-tight;
+    font-weight: 300 !important;
+  }
+
+  h3 {
+    @apply text-xl tracking-tight;
+    font-weight: 300 !important;
+  }
+
+  h4 {
+    @apply text-lg tracking-tight;
+    font-weight: 300 !important;
+  }
+
+  /* Ensure consistent heading styles across all pages */
+  h1.text-3xl {
+    font-weight: 300 !important;
+  }
+
+  h2.text-2xl {
+    font-weight: 300 !important;
+  }
+
+  h3.text-xl {
+    font-weight: 300 !important;
+  }
+
+  /* Override any font-bold classes on headings */
+  h1.font-bold,
+  h2.font-bold,
+  h3.font-bold,
+  h1.font-semibold,
+  h2.font-semibold,
+  h3.font-semibold,
+  h1.font-medium,
+  h2.font-medium,
+  h3.font-medium {
+    font-weight: 300 !important;
+  }
+
+  /* Override font weights */
+  .font-light {
+    font-weight: 300 !important;
+  }
+
+  .font-normal {
+    font-weight: 300 !important;
+  }
+
+  .font-medium {
+    font-weight: 400 !important;
+  }
+
+  .font-semibold {
+    font-weight: 500 !important;
+  }
+
+  .font-bold {
+    font-weight: 600 !important;
+  }
+
+  /* Override shadcn components */
+  .text-sm,
+  .text-xs,
+  .text-lg,
+  .text-xl,
+  .text-2xl,
+  .text-3xl {
+    font-family: var(--font-inter) !important;
+    font-weight: 300;
+  }
+
+  /* Button text */
+  button {
+    font-weight: 300 !important;
+  }
+
+  /* Card components */
+  .card-title {
+    font-weight: 300 !important;
+  }
+
+  /* Form elements */
+  input,
+  select,
+  textarea {
+    font-weight: 300 !important;
+  }
+}
+
+@layer components {
+  .card {
+    @apply shadow-md dark:shadow-none dark:border-border;
+  }
+}
+
+@layer utilities {
+  .animate-slide-in-from-left {
+    animation: slideInFromLeft 0.3s ease-out forwards;
+  }
+
+  @keyframes slideInFromLeft {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
