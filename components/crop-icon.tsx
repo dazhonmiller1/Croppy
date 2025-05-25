@@ -1,3 +1,5 @@
+'use client'
+
 export function CropIcon({ className }: { className?: string }) {
   return (
     <div className={`relative ${className}`}>
@@ -34,3 +36,4 @@ export function CropIcon({ className }: { className?: string }) {
     </div>
   )
 }
+
