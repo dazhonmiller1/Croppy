@@ -1,3 +1,5 @@
+"use client"
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { BarChart3, ImageIcon, Upload } from "lucide-react"
@@ -108,3 +110,4 @@ export default function Dashboard() {
     </div>
   )
 }
+
